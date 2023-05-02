@@ -1,0 +1,40 @@
+<div style="display:flex; justify-content: center; align-items: center; flex-direction: column;">
+    
+    
+    <h1 style="text-align: center; color: #00ADE5; margin:0px; font-size: 1vw; font-weight: 500;" >Resechedule</h1>
+    </div>
+    <div mat-dialog-content align ="center" style="padding-bottom: 5px; padding-top: 0px; color: black; display:flex; justify-content: center; align-items: center; flex-direction: row;">
+      <span style="font-size: 0.8vw;">Select Sticker office, Date and time</span>
+    </div>
+    <div  style="display: flex; justify-content: center; align-items: center; flex-direction: column; column-gap: 0.3vw; height:124px; width:auto;">
+               <div style=" height:15px; width:100%;  display: flex; justify-content: space-evenly; align-items: center; flex-direction: row;"  > 
+                <span> Sticker Office<span style="color:red;">*</span></span>
+                <mat-form-field class="mffwdhrenew" appearance="outline">
+                    <mat-select formControlName="type">
+                        <mat-option  class="mofs">
+                           ISO
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+               </div>
+               <br>
+               <div style=" height:25px; width:100%; display: flex; justify-content:space-evenly; align-items: center; flex-direction: row;"> 
+                <span> Date and Time <span style="color:red;">*</span></span>
+                <!-- <mat-form-field class="mffwdhrenew" appearance="outline">
+                  <mat-select formControlName="type">
+                      <mat-option  class="mofs">
+                         ISO
+                      </mat-option>
+                  </mat-select>
+              </mat-form-field> -->
+             <mat-form-field  class="dateoutline" appearance="outline">
+                <input matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+               </div>
+    </div>
+    <div mat-dialog-actions align ="end">
+      <button mat-button  [mat-dialog-close]  style="font-size: 1vw;">CANCEL</button>
+      <button mat-button style="color: #00ADE5; font-size: 1vw;"  [mat-dialog-close] >SUBMIT</button>
+    </div>

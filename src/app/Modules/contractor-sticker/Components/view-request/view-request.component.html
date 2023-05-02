@@ -1,0 +1,270 @@
+
+
+
+<div *ngIf="viewreq">
+<div class="sticker-details">
+    <div class="top-cnt">
+        <div class="cnt1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" arrow_back_ios" (click)="back()"  class="mpointer"></mat-icon>
+            <span class="headertext" >Renew Sticker</span>
+         </div>
+        <div class="cnt2">
+        
+        </div>
+     </div>
+<!-- <form [formGroup]="RenewalForm" > -->
+ <div class="personal-details">
+    <div class="vrflexheader">
+        <span class="flex-header-cnt">Personal
+            Details</span>
+    </div>
+     <div class="pd-data">
+         <!-- <div ="height:5vh; width:auto; display:flex; justify-content: space-between; align-items: center; flex-direction: row; border:1px solid none;  text-align: center; column-gap: 20px; flex-wrap: wrap;"> -->
+             <p  class="pd-header">Badge Number</p>
+             <p  class="pd-item">{{BadgeNumber}}</p>  
+         <!-- </div> -->
+         <!-- BadgeNumber
+EmployeeName
+No_of_Sticker -->
+         <!-- <div ="height:5vh; width:auto; display:flex; justify-content: space-between; align-items: center; flex-direction: row; border:1px solid none;  text-align: center; column-gap: 20px; flex-wrap: wrap; "> -->
+             <p  class="pd-header">Employee Name</p>
+             <p  class="pd-item" >{{EmployeeName}}</p>  
+         <!-- </div> -->
+         <!-- <div ="height:5vh; width:auto; display:flex; justify-content: space-between; align-items: center; flex-direction: row; border:1px solid none;  text-align: center; column-gap: 20px; flex-wrap: wrap;"> -->
+             <p  class="pd-header">No.of Sticker</p>
+             <p  class="pd-item" >{{No_of_Sticker}}</p>  
+         <!-- </div> -->
+         
+     </div>
+ 
+ </div>
+ 
+ <div class="vrflexheader">
+    <span class="flex-header-cnt">Vechile
+        Details</span>
+</div>
+ <div class="vechile-details">
+     <div class="vdflexbox">
+     <div class="vrflexboxcnt">
+         <p class="vechilefont">Type</p>
+ 
+         <p class="vechilefont" >Primary Color</p>
+ 
+         <p class="vechilefont" >Plate Category</p>
+     </div>
+     <div class="vrflexboxcnt">
+         <p class="vechilefont" >{{Type}}</p>
+ 
+         <p class="vechilefont" >{{Primary_Color}}</p>
+ 
+         <p class="vechilefont" >{{Plate_Category}}</p>
+     </div>
+     </div>
+ 
+     <div class="gridcnt">
+         <div class="vrflexboxcnt">
+             <p class="vechilefont">Make</p>
+         
+             <p class="vechilefont"> Secondary Color</p>
+     
+             <p class="vechilefont">License Plate No</p>
+         </div>
+         <div class="vrflexboxcnt">
+             <p class="vechilefont">{{Make}}</p>
+     
+             <p class="vechilefont">{{Secondary_Color}}</p>
+     
+             <p class="vechilefont">{{License_Plate_No}}</p>
+         </div>
+     </div>
+ 
+     <div class="gridcnt">
+         <div class="vrflexboxcnt">
+             <p class="vechilefont"> Model</p>
+          
+             <p class="vechilefont">Orgin</p>
+     
+             <!-- <p class="vechilefont">--</p> -->
+         </div>
+         <div class="vrflexboxcnt">
+             <p class="vechilefont">{{Model}}</p>
+     
+            <p class="vechilefont">--</p>
+     
+             <!--  <p class="vechilefont">--</p> -->
+         </div>
+     </div>
+ 
+     <div class="gridcnt">
+         <div class="vrflexboxcnt">
+             <p class="vechilefont">Year</p>
+     
+             <p class="vechilefont">Owner</p>
+     
+             <!-- <p class="vechilefont">--</p> -->
+         </div>
+         <div class="vrflexboxcnt">
+             <p class="vechilefont">{{ Year}}</p>
+     
+             <p class="vechilefont">{{Owner}}</p>
+     
+             <!-- <p class="vechilefont">--</p> -->
+         </div>
+     </div>
+     
+ </div>
+ <div id="sgflexboxvr">
+    <div class="vrflexheader">
+        <span class="flex-header-cnt" id="sgbn">Selected Gates</span>
+    </div>
+    <div class="vrtablefst">
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+     <ng-container matColumnDef="selectedgates">
+       <th mat-header-cell *matHeaderCellDef > &nbsp; &nbsp; &nbsp; Gate code and Name </th>
+       <td mat-cell *matCellDef="let element">
+        <mat-checkbox (click)="$event.stopPropagation()" 
+        [checked]="true">
+      </mat-checkbox>
+        {{element.GateCode}} </td>
+     </ng-container>
+   
+     <!-- Name Column -->
+     <ng-container matColumnDef="area">
+       <th mat-header-cell *matHeaderCellDef  >&nbsp; Area </th>
+       <td mat-cell *matCellDef="let element"> {{element.Area}} </td>
+     </ng-container>
+     <tr mat-header-row *matHeaderRowDef="displayedColumns" class="vrtableheader"></tr>
+     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+   </table>
+</div>
+ </div>
+ <!-- </div> -->
+
+
+ 
+ <div class="vrflexheader">
+    <span class="flex-header-cnt">Sticker
+        Details</span>
+</div>
+   
+    <div class="sticker-info">
+        <div class="vdflexbox">
+        <div class="vrflexboxcnt">
+            <p class="vechilefont">Sticker Office</p>
+            <p class="vechilefont" >Company/Private</p>
+        </div>
+        <div class="vrflexboxcnt">
+            <p class="vechilefont">{{Sticker_Office}}</p>
+    
+           
+            <mat-form-field class="vrmff" appearance="outline">
+                <mat-select >
+                    <mat-option *ngFor="let food of foods" [value]="food.value" class=mofs>
+                        {{food.viewValue}}
+                      </mat-option>
+                </mat-select>
+            </mat-form-field>
+            
+    
+           
+        </div>
+        </div>
+    
+        <div class="gridcnt">
+            <div class="vrflexboxcnt">
+                <p class="vechilefont">Expiry</p>
+            
+                <p class="vechilefont">Sticker Type</p>
+        
+                
+            </div>
+            <div class="vrflexboxcnt">
+                <p class="vechilefont">{{Expiry}}</p>
+        
+                <mat-form-field class="vrmff" appearance="outline">
+                    <mat-select >
+                        <mat-option *ngFor="let food of foods" [value]="food.value" class=mofs>
+                            {{food.viewValue}}
+                          </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+</div>
+ 
+<div class="vrflexheader" id="ahrshedbox">
+    <span  class="Ahrshedtxt" >Allowed Hours <span id="hrsbasistxt">(24 hours basis)</span></span>
+</div>
+<div id="allowedhrsvr">
+<p class="vechilefont">Start Time</p>
+<p class="vechilefont">{{StartTime}}</p>
+<p class="vechilefont" >End Time</p>
+<p class="vechilefont">{{EndTime}}</p>
+</div>
+
+<div class="vrflexheader" id="jrwdh">
+     <span class="flex-header-cnt" >Justification/Remarks</span>
+</div>
+
+<div class="vrjstfybox">
+    <div class="vrjstfycnt">
+         <p id="jrvwtxt" class="vechilefont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non cupiditate incidunt aperiam laudantium veritatis omnis molestias assumenda possimus modi. </p>
+    </div>
+    </div>
+    <br>
+    <div class="vrflexheader" id="sdtwdh">
+        <span class="flex-header-cnt" >Sechedule Date and Time</span>
+    </div>
+    <div class="sdtvrbox">
+        <div class="sdtvrcnt">
+            <p class="vechilefont">Expiry</p>
+            <p class="vechilefont">Sticker Type</p>
+        </div>
+        <div class="vrflexboxcnt">
+            <p class="vechilefont">11/12/2025</p>
+            <p class="vechilefont">11/12/2025</p>    
+        </div>
+    </div> 
+    <div class="vrflexheader">
+        <span class="flex-header-cnt">Approver Status</span>
+    </div>
+    <div class="approverflexbox">
+        <div class="approverhead">
+        <span>19 JAN</span>
+        <span>22</span>
+        </div>
+        <div class="startcicle"></div>
+        <!-- <hr ="background:rgb(46, 187, 252); width:50%; height:2px; display: inline-block; transform: translateX(50px); position: sticky;"> -->
+        <hr class="startline">
+        <div *ngFor="let item of approverslist; index as i;" class="dymcnt">
+        <mat-card   class="example-card1" >
+            <mat-card-header>
+              <mat-card-title-group class="cardtxt">
+                <mat-card-subtitle class="cardsubtxt">26 JAN 2022</mat-card-subtitle>
+              </mat-card-title-group>
+            </mat-card-header>
+            <mat-card-content  class="mcardcnt">
+              <img  id="cardimg" mat-card-sm-image src="../../../../../assets/Aramco.png"  >
+              <span  class="vechilefont">Name</span>
+              <span  class="vechilefont" >Manager1</span>
+              <span  class="vechilefont">80856114</span>
+              <span  class="vechilefont">Manager1</span>
+            </mat-card-content>
+        </mat-card>
+          <hr *ngIf="(i != approverslist.length-1)" class="dynmline" >
+        </div>
+          <hr class="cardendline">
+          <div class="verticleline"></div>
+    </div>
+</div>
+<!-- </form> -->
+    <br>
+    <br>
+    <div class="footerbox">
+        <button mat-raised-button class="vechilefont" id="delreqvr" (click)="deletereq()" >Delete Request</button>
+        <button mat-raised-button class="vechilefont" id="resedreq" (click)="resechedule()">Reschedule</button>
+        <button mat-raised-button class="vechilefont" id="recallreq" (click)="recall('Recall')">Recall</button>
+    </div>
+</div>
+<app-renew-sticker *ngIf="recallreq"></app-renew-sticker>
+<!--  -->

@@ -1,0 +1,144 @@
+<div  class="top-cnt">
+    <div class="cnt1">
+     <!-- <div>
+         <mat-icon ="cursor: pointer;font-weight: 550;" aria-hidden="false" title="back" fontIcon="arrow_back_ios"   ="cursor: pointer;"></mat-icon>
+     </div>
+     <div  ="font-size:1.4vw; font-weight: 500;font-: italic;cursor: pointer;">
+         <span ="margin: 0px;">Restricted Access</span>
+     </div> -->
+     <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" arrow_back_ios"   class="mpointer"></mat-icon>
+     <span class="headertext" >Restricted Access</span>
+     </div>
+ </div>
+ <div class="rstaccessflexbox">
+  <div class="aprheaderfst"><span class="circlefield">1</span><span class="circletxt">Plant Code/Group</span></div>
+  <hr class="aprheaderline">
+  <div class="aprheadersnd"><span class="circlefield">2</span><span class="circletxt" >Approver</span></div>
+</div>
+<div class="tableflexheader">
+<div>
+  <span>Selected Access</span>
+</div>
+</div>
+<div   class="tableflexbox">
+<div class="fsttable">
+    <table mat-table [dataSource]="approvertable1" id="approver-table" class="mat-elevation-z0">
+        <!-- EmployeeName: 'James Smith', BadgeNumber: 15181034, Sticker: '1/4', Action: 'View More', -->
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef > Description </th>
+            <td mat-cell *matCellDef="let element"> {{element.plantcode}} </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef > Plant Code/Group </th>
+            <td mat-cell *matCellDef="let element"> {{element.plantgroup}} </td>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef >ValidityType </th>
+            <td mat-cell *matCellDef="let element"> 
+                <mat-form-field class="mso" appearance="outline" >
+                  <mat-select [(ngModel)]="selectedvaltype" name="valtype">
+                    <mat-option  [value]="element.validitytype" class=mofs  >
+                      {{element.validitytype}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                
+                </td>
+          </ng-container>  
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol" >
+            <th mat-header-cell *matHeaderCellDef >ExpiryDate</th>
+            <td mat-cell *matCellDef="let element" class="tabletxtcolor"> 
+                <!-- <mat-form-field ="width: 8rem;" appearance="outline" >
+                    <mat-select [(ngModel)]="selectedvaltype" name="valtype">
+                      <mat-option  [value]="element.validitytype"  >
+                        {{element.validitytype}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> -->
+                  <mat-form-field appearance="outline" id="arpmff" >
+                    <input matInput [matDatepicker]="picker" placeholder="" >
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker panelClass="datepickerOne"></mat-datepicker>
+                  </mat-form-field>
+
+
+                  
+                </td>
+          </ng-container>
+        
+          <ng-container *matNoDataRow>
+            <div class="no-data-row">
+              No data available
+            </div>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="example-second-header-row"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+<div class="sndtable">
+    <div class="aprtheader">
+    Approver
+      </div>
+    <table mat-table [dataSource]="approvertable2" class="mat-elevation-z0"  class="fs-table">
+        <!-- EmployeeName: 'James Smith', BadgeNumber: 15181034, Sticker: '1/4', Action: 'View More', -->
+        
+        <ng-container matColumnDef="position">
+            
+            <th mat-header-cell *matHeaderCellDef >Name </th>
+            <td mat-cell *matCellDef="let element">
+                <mat-form-field class="mso" appearance="outline" >
+                    <mat-select [(ngModel)]="selectedname" name="name">
+                      <mat-option  [value]="element.name"  class=mofs >
+                        {{element.name}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                 </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef > Position</th>
+            <td mat-cell *matCellDef="let element"> Developer </td>
+          </ng-container>
+        
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef >Org Name</th>
+            <td mat-cell *matCellDef="let element">
+               Al-Hudaiya
+            </td>
+          </ng-container>
+        
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol" >
+            <th mat-header-cell *matHeaderCellDef >Org Code</th>
+            <td mat-cell *matCellDef="let element" class="tabletxtcolor"> 300456 </td>
+          </ng-container>
+        
+          <ng-container *matNoDataRow>
+            <div class="no-data-row">
+              No data available
+            </div>
+          </ng-container>
+
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns" class="aprtable"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="footerbox">
+    <button mat-raised-button class="vechilefont" id="cnclbtn" (click)="cancel()">Cancel</button>
+    <button mat-raised-button class="vechilefont" id="continuebtn" (click)="submission()">Continue</button>
+</div>

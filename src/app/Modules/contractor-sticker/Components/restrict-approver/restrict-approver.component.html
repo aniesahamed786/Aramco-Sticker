@@ -1,0 +1,167 @@
+
+<div class="rstaprhead">
+  <div>
+    <span>Selected Access</span>
+  </div>
+</div>
+<!-- 
+Description:"214 - Jezan Marine Terminal",
+    plantcode:"Plant Code",
+    validitytype:"Permanent",
+    expirydate:"12/12/2023",
+    name:"Husain",
+    position:"Developer",
+    orgname:"K", -->
+<!-- orgcode:"2185" -->
+<div class="rstaprflexbox" >
+  <div class="lfttable">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+      <!-- EmployeeName: 'James Smith', BadgeNumber: 15181034, Sticker: '1/4', Action: 'View More', -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef >
+          Description
+        </th>
+        <td mat-cell *matCellDef="let element">{{  element.plantcode }}</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef >
+          Plant Code/Group
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.Description }}</td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef >
+          ValidityType
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <mat-form-field class="ramffwdh" appearance="outline">
+            <mat-select [(ngModel)]="selectedvaltype" name="valtype">
+              <mat-option [value]="element.validitytype" class=mofs>
+                {{ element.validitytype }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </ng-container>
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef >
+          ExpiryDate
+        </th>
+        <td mat-cell *matCellDef="let element" class="tdcolor">
+          <mat-form-field appearance="outline" class="ramffwdh">
+            <input matInput [matDatepicker]="picker" placeholder="" />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker panelClass="datepickerOne"></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </ng-container>
+      <ng-container *matNoDataRow>
+        <div class="no-data-row">
+          No data available
+        </div>
+      </ng-container>
+      <!-- <ng-container matColumnDef="cost-description">
+        <th mat-header-cell *matHeaderCellDef> Cost of the item in USD </th>
+      </ng-container>
+      <ng-container matColumnDef="item-description2">
+        <th mat-header-cell *matHeaderCellDef> Name of the item purchased </th>
+      </ng-container>
+      <ng-container matColumnDef="cost-description2">
+        <th mat-header-cell *matHeaderCellDef> Cost of the item in USD </th>
+      </ng-container> -->
+      <!-- <tr mat-header-row *matHeaderRowDef="['item-description','item-description2','item-description3']" class="example-second-header-row"></tr> -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="example-second-header-row"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+  <div class="righttable">
+    <div class="rstaprapprovertable">
+      Approver
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0" class="fs-table">
+      <!-- EmployeeName: 'James Smith', BadgeNumber: 15181034, Sticker: '1/4', Action: 'View More', -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef >
+          Name
+        </th>
+        <td mat-cell *matCellDef="let element" style="padding:0px">
+          <mat-form-field class="ramffwdh" appearance="outline">
+            <mat-select [(ngModel)]="selectedname" name="name">
+              <mat-option [value]="element.name" class=mofs>
+                {{ element.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef >
+          Position
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef >
+          Org Code
+        </th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.orgname }}
+        </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>
+          Org Name
+        </th>
+        <td mat-cell *matCellDef="let element" class="tdcolor">
+          {{ element.orgcode }}
+        </td>
+      </ng-container>
+      <ng-container *matNoDataRow>
+        <div class="no-data-row">
+          No data available
+        </div>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"  class="rstaprtable"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<!-- <div 
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    float: bottom;
+  ">
+  <button mat-raised-button class="vechilefont" 
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: #fffcfc;
+      color: rgb(0, 0, 0);
+    ">
+    Cancel
+  </button>
+  <button mat-raised-button class="vechilefont" ="
+      padding-left: 20px;
+      padding-right: 20px;
+      background-color: #008300;
+      color: white;
+    " (click)="submission()">
+    Continue
+  </button>
+</div> -->

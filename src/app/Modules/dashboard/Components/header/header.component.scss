@@ -1,0 +1,29 @@
+.row {
+    display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    align-items: center;
+    height: 8%;
+    width:100%;
+    padding: 5px;
+    color: white;
+    // border:1px solid red;
+}
+.header {
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+img {
+    border-radius: 50%;
+  }
+
+  .grey {
+    color: grey;
+    font-size: 15px;
+  }

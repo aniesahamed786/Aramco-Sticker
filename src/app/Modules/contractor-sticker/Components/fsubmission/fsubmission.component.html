@@ -1,0 +1,419 @@
+
+<div class="personal-details">
+    <div class="headercnt">
+        <h3 class="newstickerheader" >Personal
+            Details</h3>
+    </div>
+    <div class="pd-data" id="p">
+        <div class="pd-data-header">Badge Number<span class="red-star">*</span></div>
+        <div class="pd-data-items">{{badgenum}}</div>
+        <div class="pd-data-header">Employee Name</div>
+        <div class="pd-data-items">{{empname}}</div>
+        <div class="pd-data-header">No.of Sticker</div>
+        <div class="pd-data-items">{{nos}}</div>
+
+
+    </div>
+
+</div>
+<form [formGroup]="finaldata">
+
+    <div class="headercnt">
+        <h3 class="newstickerheader">Vechile
+            Details</h3>
+    </div>
+    <div class="Vechile_Details_Main">
+        <!-- <div class="Vechile_Details_Sub"> -->
+        <!-- <div></div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Type<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="make">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                    <!-- <mat-option value="option3">Option 3</mat-option> -->
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Make<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Model<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="model">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Year<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="year">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- </div>   -->
+
+        <!-- <div class="Vechile_Details_Sub"> -->
+        <!-- <div></div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Primary Color<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="primarycolor">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Secondary Color<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="secondarycolor">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Orgin<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="orgin">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Owner<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="owner">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- </div>   -->
+
+        <!-- <div class="Vechile_Details_Sub_two"> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Plate Category<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="platecategory">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">License Plate No<span class="red-star">*</span></div>
+        <div  class="grid-item_details last">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="licenseplateno">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field class="lncplatetxt" appearance="outline">
+                <mat-select>
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field class="lncplatetxt" appearance="outline">
+                <mat-select>
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+
+
+
+    </div>
+
+    <div class="headercnt">
+        <h3 class="newstickerheader">Sticker
+            Details</h3>
+    </div>
+
+    <div class="Sticker_Details_Main">
+
+        <div  class="sticker-item_header">Sticker Office<span class="red-star">*</span></div>
+        <div  class="sticker-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="stickeroffice">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div  class="sticker-item_header">Expiry</div>
+        <div  class="sticker-item_details">
+            <mat-radio-group aria-label="Select an option" class="mrbtn">
+                <mat-radio-button value="1" class="mrbtn" >Regular Validity</mat-radio-button>
+                <mat-radio-button value="2" class="mrbtn">Short Duration</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+
+
+
+
+        <div  class="sticker-item_header">Company/Private</div>
+        <div  class="sticker-item_details">
+            <mat-form-field style="width: 10rem;" appearance="outline">
+                <mat-select formControlName="company">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div  class="sticker-item_header">Sticker Type<span class="red-star">*</span></div>
+        <div  class="sticker-item_details">
+            <mat-form-field  appearance="outline">
+                <mat-select formControlName="stickertype">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="headercnt">
+        <span class="newstickerheader">Allowed Hours</span>
+    </div>
+    <div class="Sticker_Details_Main">
+        <div  class="hours-item_header">Start Time<span class="red-star">*</span></div>
+        <div  class="hours-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="starttime">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div  class="hours-item_header">End Time<span class="red-star">*</span></div>
+        <div  class="hours-item_details">
+            <mat-form-field class="mfwidth" appearance="outline">
+                <mat-select formControlName="endtime">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="headercnt">
+        <h3 class="newstickerheader">Justification<span class="red-star">*</span></h3>
+    </div>
+
+    <div class="justifybox">
+        <div class="justifytxt">
+            <p style="padding: 5px;  " class="vechilefont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                cupiditate incidunt aperiam laudantium veritatis omnis molestias assumenda possimus modi. </p>
+        </div>
+
+    </div>
+</form>
+<br>
+<div class="sgsatables">
+    <h3 class="newstickerheader" id="nssg">Selected Gates</h3>
+</div>
+<div id="selectedgtable">
+    <table mat-table [dataSource]="dataSource" id="gatestable" class="mat-elevation-z0">
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef >
+                <div class="mbox10">
+                    <span >Gate Code and Name</span>
+                </div>
+            </th>
+            <td mat-cell *matCellDef="let row">
+                <div class="mbox9">
+                    <mat-checkbox (click)="$event.stopPropagation()" (change)="($event ? selection.toggle(row) : null)"
+                        [checked]="true" [aria-label]="checkboxLabel(row)" [disabled]="true">
+                    </mat-checkbox>
+                    <span >{{row.GateCode}}</span>
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="area">
+            <th mat-header-cell *matHeaderCellDef >
+                <div class="mbox10">
+                    <span > &nbsp; Area</span>
+                </div>
+            </th>
+
+
+            <td mat-cell *matCellDef="let row">
+                <div class="mbox10">
+                    <span >{{row.Area}}</span>
+                </div>
+            </td>
+
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns" class="gateheader"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
+<br>
+<div
+    class="sgsatables">
+    <h3 class="newstickerheader" id="bdrn">Selected Restricted Access</h3>
+</div>
+<div class="sratable">
+    <div id="lefttable">
+        <table mat-table [dataSource]="dataSource2" class="mat-elevation-z0" class="pcode-table">
+            <!-- EmployeeName: 'James Smith', BadgeNumber: 15181034, Sticker: '1/4', Action: 'View More', -->
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef > Description </th>
+                <td mat-cell *matCellDef="let element">
+                    <div class="mbox9">
+                        <mat-checkbox (click)="$event.stopPropagation()"
+                            (change)="($event ? selection.toggle(element) : null)" [checked]="true"
+                            [aria-label]="checkboxLabel(element)" [disabled]="true">
+                        </mat-checkbox>
+                        <span > {{element.Description}}</span>
+                    </div>
+                </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef > Plant Code/Group </th>
+                <td mat-cell *matCellDef="let element"> {{element.plantcode}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef > Expiry Date </th>
+                <td mat-cell *matCellDef="let element">
+                    <!-- <mat-form-field class="mfwidth" appearance="outline" >
+                    <mat-select [(ngModel)]="selecteddate" name="date">
+                      <mat-option  [value]="12/12/1999" >
+                        12/12/1999
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> -->
+                  <mat-form-field appearance="outline" id="dpfield" >
+                    <input matInput [matDatepicker]="picker" placeholder="" >
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker panelClass="datepickerOne"></mat-datepicker>
+                  </mat-form-field>
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef > ValidityType </th>
+                <td mat-cell *matCellDef="let element" class="viewtxt">
+                    <mat-form-field class="mfwidth" appearance="outline">
+                        <mat-select [(ngModel)]="selectedvaltype" name="valtype">
+                            <mat-option [value]="element.validitytype" class=mofs>
+                                {{element.validitytype}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2" class="example-second-header-row"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+        </table>
+    </div>
+    <div id="righttable">
+        <div class="tableheader-c">
+            <span>Approver</span>
+        </div>
+        <table mat-table [dataSource]="dataSource2" class="mat-elevation-z0" style="border-top:2px solid white;">
+            <!-- EmployeeName: 'James Smith', BadgeNumber: 15181034, Sticker: '1/4', Action: 'View More', -->
+
+            <ng-container matColumnDef="position">
+
+                <th mat-header-cell *matHeaderCellDef >Name </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-form-field class="mfwidth" appearance="outline">
+                        <mat-select [(ngModel)]="selectedname" name="name">
+                            <mat-option [value]="element.name" class=mofs>
+                                {{element.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef > Position</th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef >Org Code</th>
+                <td mat-cell *matCellDef="let element">
+                    {{element.orgname}}
+                </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="symbol">
+                <th mat-header-cell *matHeaderCellDef >Org Name</th>
+                <td mat-cell *matCellDef="let element" class="viewtxt"> {{element.orgcode}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns2" class="theaderback"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+        </table>
+    </div>
+</div>
+<br>

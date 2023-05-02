@@ -1,0 +1,79 @@
+<div class="maincnt">
+    <div class="headercnt">
+        <div class="subheadercnt1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" arrow_back_ios" (click)="back()" class="mpointer">
+            </mat-icon>
+            <!-- <svg (click)="back()" class="mpointer" height="3.6vh"  width="1.7vw" xmlns="http://www.w3.org/2000/svg"  viewBox="0 96 960 960" ><path d="M561 816 320 575l241-241 43 43-198 198 198 198-43 43Z"/></svg> -->
+            <span  class="headertext">Available Contracts</span>
+        </div>
+        <div class="subheadercnt2">
+            <div class="secondsubhead2">
+                <mat-form-field appearance="outline"  id="searchbar">
+                   <div style="display:flex; justify-content: center; align-items: center; flex-direction: row;">
+                    <input (keyup)="applyFilter($event)"  matInput placeholder="Search by Contract Name or Contract Number">
+                    <svg  fill="#00ADE5" xmlns="http://www.w3.org/2000/svg" height="4vh" viewBox="0 96 960 960" width="3vw"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+                   </div>
+                    <!-- <mat-icon matSuffix id="searchicon">search</mat-icon> -->
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="headercnt2">
+        <div class="secondsubhead1">
+            <span>List of Contract</span>
+        </div>
+        <div class="secondsubhead3">
+            <div>
+                <button mat-button [matMenuTriggerFor]="menu" > 
+                        <!-- <mat-icon  id="sorticon">sort</mat-icon> -->
+                        <div class="sortbtn">
+                            <svg  xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 96 960 960" width="1.67vw"><path d="M120 816v-60h240v60H120Zm0-210v-60h480v60H120Zm0-210v-60h720v60H120Z"/></svg>
+                            <div  id="sorttext">sort</div>
+                            <!-- <mat-icon id="dropicon">keyboard_arrow_down</mat-icon> -->
+                            <svg    xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 96 960 960" width="1.67vw"><path d="M480 712 240 472l43-43 197 197 197-197 43 43-240 240Z"/></svg>
+                        </div>
+                       
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="externalIdsort()">ID Expiry</button>
+                    <button mat-menu-item  (click)="externalNumsort()">Contract No</button>
+                </mat-menu>
+            </div>
+            &nbsp; &nbsp;
+            <button mat-raised-button id="reqbtn"
+                (click)="inprocessrequest()">In Process Request</button>
+        </div>
+    </div>
+    <div class="tablecnt">
+        <table  mat-table [dataSource]="dataSource" matSort (matSortChange)="announceSortChange($event)"  class="mat-elevation-z0">
+            <ng-container matColumnDef="contractname">
+                <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by name"  > Contract Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.contractname}} </td>
+            </ng-container>
+            <ng-container matColumnDef="contractnumber">
+                <th mat-header-cell *matHeaderCellDef  mat-sort-header sortActionDescription="Sort by number" > Contract Number </th>
+                <td mat-cell *matCellDef="let element"> {{element.contractnumber}} </td>
+            </ng-container>
+            <ng-container matColumnDef="ExpiryDate">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by number" > Expiry Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.Expirydate}} </td>
+            </ng-container>
+            <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef > Action </th>
+                <td mat-cell *matCellDef="let element" class="mpointer" id="actioncolor"
+                    (click)="employeedetails(element)"> View Details </td>
+            </ng-container>
+            <ng-container *matNoDataRow>
+                <div class="no-data-row">
+                  No data available
+                </div>
+              </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="cntlistheader"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div class="flex-center" *ngIf="isLoadMore">
+        <button mat-raised-button class="load-more" (click)="loadMore()">Load More</button>
+    </div>
+</div>

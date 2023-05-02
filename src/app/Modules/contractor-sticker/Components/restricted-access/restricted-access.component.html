@@ -1,0 +1,208 @@
+
+<div (step1)="nextprocess($event)" class="flex-boxcnt">
+<div>
+  <span>Available Acces Code/Group</span>
+</div>
+<div>
+    <mat-form-field appearance="outline" class="mffwdth" >
+        <div style="display:flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+          <svg  fill="#757575" xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 96 960 960" width="3vw"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+          <input (keyup)="applyFilter($event)" matInput placeholder="Plant Code/Group">
+         </div>
+    </mat-form-field>
+    &nbsp; &nbsp;
+    <button mat-button [matMenuTriggerFor]="menu"><span>
+        <mat-icon class="mticnh"> sort</mat-icon>
+        <span id="sorttxt">sort</span>
+        <mat-icon class="mticnh">keyboard_arrow_down</mat-icon></span></button>
+   <mat-menu #menu="matMenu">
+       <button mat-menu-item>ID Expiry</button>
+       <button mat-menu-item>Contract No</button>
+   </mat-menu>
+</div>
+</div>
+
+<div id="rstaccflexbox">
+    <div class="rstacssflexcnt">
+          <table mat-table [dataSource]="dataSource1" class="mat-elevation-z0">
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef  >
+                  <div class="mbox10">
+                  <span>Plant Code</span>
+                  <div>
+                    <mat-form-field appearance="outline" class="mffwdth">
+                        <div style="display:flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+                          <input (keyup)="plantcodefltr($event)" matInput placeholder="Filter Gate">
+                          <svg  fill="#757575" xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 96 960 960" width="3vw"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+                         </div>
+                    </mat-form-field>
+                  </div>
+              </div>
+                </th>
+                <td mat-cell *matCellDef="let row" >
+                  <div class="mbox9">
+                  <mat-checkbox (click)="$event.stopPropagation()"
+                  (change)="(addplantcode(row,$event));($event ? selection.toggle(row) : null)"
+                                [checked]="selection.isSelected(row)"
+                                [aria-label]="checkboxLabel(row)">
+                  </mat-checkbox>
+                  <span  >{{row.plcd}}</span> 
+                  </div>
+                </td>
+              </ng-container>
+
+              <ng-container *matNoDataRow>
+                <div class="no-data-row">
+                  No data available
+                </div>
+              </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns1" class="fst-table-header"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns1;"></tr>
+          </table>
+    </div>
+    <div class="sndtable">
+        <table mat-table
+       [dataSource]="dataSource" multiTemplateDataRows
+       class="mat-elevation-z0" id="tablebdr">
+       <!-- <ng-container matColumnDef="select" >
+        <th mat-header-cell *matHeaderCellDef   ="background-color: #EEF3F8; margin:auto; ">
+          <div class="mbox9">
+          <mat-checkbox (change)="$event ? toggleAllRows() : null"
+                        [checked]="selection.hasValue() && isAllSelected()"
+                        [indeterminate]="selection.hasValue() && !isAllSelected()"
+                        [aria-label]="checkboxLabel()"
+                        aria-placeholder="Request Number">
+          </mat-checkbox>
+          <p  margin:0px;">Sticker Type</p>
+      </div>
+        </th>
+        <td mat-cell *matCellDef="let row" >
+          <div class="mbox9">
+          <mat-checkbox (click)="$event.stopPropagation()"
+                        (change)="$event ? selection.toggle(row) : null"
+                        [checked]="selection.isSelected(row)"
+                        [aria-label]="checkboxLabel(row)">
+          </mat-checkbox>
+         
+          <p  margin:0px;" >{{row.GateCode}}</p> 
+          </div>
+        </td>
+      </ng-container> -->
+  <ng-container matColumnDef="expand"  >
+  
+    <th mat-header-cell *matHeaderCellDef aria-label="row actions"  >
+      <div class="mbox10">
+      <span >Plant Group</span>
+      <div>
+        <mat-form-field appearance="outline" class="mffwdth">
+           
+            <div style="display:flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+              <input (keyup)="plantgrpfltr($event)" matInput placeholder="Filter Gate">
+              <svg  fill="#757575" xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 96 960 960" width="3vw"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+             </div>
+        </mat-form-field>
+      </div>
+      </div>
+    </th>
+    <td mat-cell *matCellDef="let i=index let element"  (click)="returnindex(element)">
+      <div class="mbox9">
+        <mat-checkbox (click)="$event.stopPropagation()"
+                      (change)="(addplantgrp(element,$event));($event ? selection2.toggle(element) : null)"
+                      [checked]="selection2.isSelected(element)"
+                      [aria-label]="checkboxLabel2(element)">
+        </mat-checkbox>
+        <span style=" justify-content: center; align-items: center;">{{element.plgrp}}</span>
+      <button mat-icon-button aria-label="expand row" (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()" (click)="returnindex(element)" >
+        <mat-icon *ngIf="expandedElement !== element" class="micolor">keyboard_arrow_down</mat-icon>
+        <mat-icon *ngIf="expandedElement === element" style="color:#00ADE5">keyboard_arrow_up</mat-icon>
+      </button>
+        </div>
+        
+    </td>
+  </ng-container>
+
+  <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+  <ng-container matColumnDef="expandedDetail">
+    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+      <div class="example-element-detail"
+           [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'"    >
+            <table [dataSource]="dataSource3"  mat-table class="mat-elevation-z8" class="trdtable">
+                <!-- {StickerType:'Contractor Non Restricted',PlateNo:'2345-KSA',Model_Year:'2022',ExipiryDate:'11/02/2023',Status:'Active',Action:'View Details'} -->
+             <!--selection Tag --> 
+             <ng-container matColumnDef="select" >
+              <!-- <th mat-header-cell *matHeaderCellDef  ="background-color: #EEF3F8; margin:auto; "   *ngIf="false"> -->
+                <!-- <div class="mbox9">
+              
+                <p =" margin:0px;">Sticker Type</p>
+            </div> -->
+              <!-- </th> -->
+              <td mat-cell *matCellDef="let i=index let row"   >
+                <div class="mbox9">
+                <!-- <mat-checkbox (click)="$event.stopPropagation()"
+                              (change)="$event ? selection.toggle(row) : null"
+                              [checked]="selection.isSelected(row)"
+                              [aria-label]="checkboxLabel(row)">
+                </mat-checkbox> -->
+                {{row.desc}}
+                </div>
+              </td>
+            </ng-container>
+   
+              <!-- <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef ="background-color: #EEF3F8;"> Plate Number </th>
+                <td mat-cell *matCellDef="let i=index let element"> {{element.GateCode}}</td>
+              </ng-container> -->
+            
+              <!-- <ng-container matColumnDef="weight">
+                <th mat-header-cell *matHeaderCellDef ="background-color: #EEF3F8;">Model Year</th>
+                <td mat-cell *matCellDef="let i=index let element"> {{element.Model_Year}} </td>
+              </ng-container>
+              <ng-container matColumnDef="symbol" >
+                <th mat-header-cell *matHeaderCellDef ="background-color: #EEF3F8;"> Expiry Date </th>
+                <td mat-cell *matCellDef="let i=index let element"  > {{element.ExipiryDate}} </td>
+              </ng-container>
+              <ng-container matColumnDef="status1" >
+                <th mat-header-cell *matHeaderCellDef ="background-color: #EEF3F8;"> Status </th>
+                <td mat-cell *matCellDef="let i=index let element"  > {{element.Status}} </td>
+              </ng-container>  
+              <ng-container matColumnDef="details">
+                <th mat-header-cell *matHeaderCellDef ="background-color: #EEF3F8;">Action</th>
+                <td mat-cell *matCellDef="let i=index let element" ="color:#00ADE5" ="cursor: pointer;"  >{{element.Action}}</td>
+              </ng-container>   -->
+              <ng-container matNoDataRow>
+                <div class="no-data-row">
+                  No data available
+                </div>
+              </ng-container>
+                <!-- <tr mat-header-row *matHeaderRowDef="displayedColumns" class="expandheader"></tr> -->
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection2.toggle(row)"></tr>
+        </table>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container *matNoDataRow>
+    <div class="no-data-row">
+      No data available
+    </div>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand" class="expandheader"></tr>
+  <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;"
+      class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+  </tr>
+  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+        </table>
+    </div>
+</div>
+
+<br>
+    <br>
+    <!-- <div ="display:flex; justify-content: flex-end; align-items: center; flex-direction: row; column-gap: 30px;  flex-wrap: wrap; float: bottom;">
+    
+        <button mat-raised-button class="vechilefont" ="padding-left: 20px; padding-right: 20px; background-color: #fffcfc;  color:rgb(0, 0, 0);" >Cancel</button>
+        <button mat-raised-button class="vechilefont" ="padding-left: 20px; padding-right: 20px;background-color: #008300;  color:white;" (click)="approver()">Continue</button>
+        
+
+    </div> -->

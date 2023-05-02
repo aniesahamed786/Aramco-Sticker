@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$CDIP-APP-primary: mat.define-palette(mat.$indigo-palette);
+$CDIP-APP-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$CDIP-APP-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$CDIP-APP-theme: mat.define-light-theme((
+  color: (
+    primary: $CDIP-APP-primary,
+    accent: $CDIP-APP-accent,
+    warn: $CDIP-APP-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($CDIP-APP-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-progress-spinner{
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%,-50%);
+    z-index: 5;
+}
+
+.scrollabletable{
+  height: auto; 
+  max-height: 200px;
+  overflow-y:scroll;
+}
+.example-element-detail{
+  height: auto; 
+  max-height: 100px;
+  overflow-y:scroll;
+}
+.mofs{
+  font-size: 0.8vw;
+}
+
+.pltsrip{
+  padding:0px; margin: 0px; height:auto; width:100%; background-color: #ffffff;
+}
+
+input::placeholder {
+  font-size: 0.8vw;
+}
+::ng-deep .mat-mdc-form-field-label, 
+::ng-deep .mat-mdc-form-field-flex .mat-mdc-form-field-infix {
+  font-size: 0.8vw; /* Change to your desired font size */
+}
+
+
+
+.no-data-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:25px;
+  width:100%;
+  font-size: 1vw;
+  // font-weight: 500;
+  text-align: center;
+  padding: 16px;
+  color: #222222;
+}
+
+.mffwdhrenew{
+  width: 8rem !important;
+  height:3vh !important;
+}
+.msowdh{
+  width: 5rem !important;
+  height:3vh !important;
+}
+.strdetwdh {
+  width: 16rem !important;
+  height: 3vh;
+}
+// mat-mdc-form-field {
+//   background-color: yellow;
+// }
+
+
+

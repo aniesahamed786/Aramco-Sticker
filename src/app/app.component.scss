@@ -1,0 +1,70 @@
+
+::ng-deep .mat-mdc-checkbox.mat-accent {
+    --mdc-checkbox-selected-checkmark-color: #fff;
+    --mdc-checkbox-selected-focus-icon-color:#00a3e0;
+    --mdc-checkbox-selected-hover-icon-color:#00a3e0;
+    --mdc-checkbox-selected-icon-color:#00a3e0;
+    --mdc-checkbox-selected-pressed-icon-color:#00a3e0;
+    --mdc-checkbox-unselected-focus-icon-color: #00a3e0;
+    --mdc-checkbox-unselected-hover-icon-color: #00a3e0;
+    --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
+    --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
+    --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+
+}
+
+
+
+::ng-deep .mat-mdc-radio-button.mat-accent {
+    --mdc-radio-disabled-selected-icon-color: #000;
+    --mdc-radio-disabled-unselected-icon-color: #000;
+    --mdc-radio-unselected-focus-icon-color: #00a3e0;
+    --mdc-radio-unselected-hover-icon-color: #00a3e0;
+    --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-selected-focus-icon-color: #00a3e0;
+    --mdc-radio-selected-hover-icon-color: #00a3e0;
+    --mdc-radio-selected-icon-color: #00a3e0;
+    --mdc-radio-selected-pressed-icon-color:#00a3e0;
+    --mat-mdc-radio-ripple-color: #000;
+    --mat-mdc-radio-checked-ripple-color: #00a3e0;
+}
+
+ 
+::ng-deep .mat-select-value-text {
+    font-size: 0.8vw;
+  }
+  
+  ::ng-deep .mat-mdc-select-value-text{
+    font-size: 0.8vw;
+  }
+
+  ::ng-deep .mat-mdc-menu-content .mat-mdc-menu-item .mdc-list-item__primary-text{
+    font-size: 0.9vw;
+    color:#000;
+}
+
+::ng-deep .mat-mdc-menu-item {
+    min-height:36px;
+}
+
+input{
+    background-color: white !important;
+  }
+//   ::ng-deep .mat-mdc-menu-panel {
+//     background-color: #ff3434;
+//     width: auto;
+//     padding: 8px;
+//   }
+//  ::ng-deep .mat-mdc-menu-item {
+//     font-size: 0.8vw;
+//     color: #333;
+//   }
+// ::ng-deep .mat-mdc-menu-content,.mat-mdc-menu-item
+// {
+//     font-size: 0.8vw;
+//     color: #333;
+
+// }
+ 

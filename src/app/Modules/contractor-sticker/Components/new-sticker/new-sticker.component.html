@@ -1,0 +1,329 @@
+<ng-container *ngIf="newsticker">
+<div (sendData)="receivedempdata($event)" class="top-cnt">
+    <div class="cnt1">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" arrow_back_ios" (click)="back()"
+                 class="mpointer"></mat-icon>
+            <span  class="headertext">New Sticker</span>
+    </div>
+
+</div>
+<div class="personal-details">
+    <div class="nsheaderbox">
+        <h3 class="newstickerheader">Personal
+            Details</h3>
+    </div>
+    <div class="pd-data" id="pdfields">
+        <div class="pd-data-header">Badge Number<span >*</span></div>
+        <div class="pd-data-items">{{badgenum}}</div>
+        <div class="pd-data-header">Employee Name</div>
+        <div class="pd-data-items">{{empname}}</div>
+        <div class="pd-data-header">No.of Sticker</div>
+        <div class="pd-data-items">{{nos}}</div>
+
+
+    </div>
+
+</div>
+
+<form [formGroup]="NewSticker">
+    <div class="nsheaderbox">
+        <h3 class="newstickerheader">Vechile
+            Details</h3>
+    </div>
+    <div class="Vechile_Details_Main">
+        <!-- <div class="Vechile_Details_Sub"> -->
+        <!-- <div></div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Type<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="make">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                    <!-- <mat-option value="option3">Option 3</mat-option> -->
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Make<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Model<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="model">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Year<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="year">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- </div>   -->
+
+        <!-- <div class="Vechile_Details_Sub"> -->
+        <!-- <div></div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Primary Color<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="primarycolor">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Secondary Color<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="secondarycolor">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Orgin<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="orgin">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Owner<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="owner">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- </div>   -->
+
+        <!-- <div class="Vechile_Details_Sub_two"> -->
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">Plate Category<span class="red-star">*</span></div>
+        <div  class="grid-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="platecategory">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+
+        <!-- <div class="Vechile_Details_Cnt"> -->
+        <div  class="grid-item_header">License Plate No<span class="red-star">*</span></div>
+        <div  class="grid-item_details last">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="licenseplateno">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field class="nstrmso" appearance="outline">
+                <mat-select>
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp;
+            <mat-form-field class="nstrmso" appearance="outline">
+                <mat-select>
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <!-- </div> -->
+        <!-- </div> -->
+
+
+
+    </div>
+
+    <div class="nsheaderbox">
+        <h3 class="newstickerheader">Sticker
+            Details</h3>
+    </div>
+
+    <div class="Sticker_Details_Main">
+
+        <div  class="sticker-item_header">Sticker Office<span class="red-star">*</span></div>
+        <div  class="sticker-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="stickeroffice">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div  class="sticker-item_header">Expiry</div>
+        <div  class="sticker-item_details">
+            <mat-radio-group aria-label="Select an option" class="nsmrbtn">
+                <mat-radio-button value="1" class="nsmrbtn">Regular Validity</mat-radio-button>
+                <mat-radio-button value="2" class="nsmrbtn">Short Duration</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+
+
+
+
+        <div  class="sticker-item_header">Company/Private</div>
+        <div  class="sticker-item_details">
+            <mat-form-field class="strtypewth" appearance="outline">
+                <mat-select formControlName="company">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div  class="sticker-item_header">Sticker Type<span class="red-star">*</span></div>
+        <div  class="sticker-item_details">
+            <mat-form-field class="strtypewth" appearance="outline">
+                <mat-select formControlName="stickertype">
+                    <mat-option *ngFor="let type of Contractor_Types" [value]="type.value" class=mofs>
+                        {{type.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+    <div class="nsheaderbox">
+        <h3 class="newstickerheader">Allowed Hours</h3>
+    </div>
+
+    <div class="Sticker_Details_Main">
+
+        <div  class="hours-item_header">Start Time<span class="red-star">*</span></div>
+        <div  class="hours-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="starttime">
+                    <mat-option *ngFor="let type of types" [value]="type.value" class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <div  class="hours-item_header">End Time<span class="red-star">*</span></div>
+        <div  class="hours-item_details">
+            <mat-form-field class="nsmff" appearance="outline">
+                <mat-select formControlName="endtime">
+                    <mat-option *ngFor="let type of types" [value]="type.value"  class=mofs>
+                        {{type.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+
+    <div class="nsheaderbox">
+        <h3 class="newstickerheader">Justification<span class="red-star">*</span></h3>
+    </div>
+
+    <div class="nsjstfybox">
+        <div id="jstfycnt">
+            <p id="jstfytxt" class="vechilefont">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                cupiditate incidunt aperiam laudantium veritatis omnis molestias assumenda possimus modi. </p>
+        </div>
+    </div>
+</form>
+<br>
+<br>
+
+<div class="footerbox">
+    <button mat-raised-button class="vechilefont" id="cancelbtn"
+        (click)="disableform()">Cancel</button>
+    <button mat-raised-button class="vechilefont" id="continuebtn"
+        (click)="gateaccess()">Continue</button>
+
+
+</div>
+</ng-container>
+<app-gate-access-shared *ngIf="gates" [datatable]="dataSource" (submitgateaccess)="rgaccesssubmit($event)"></app-gate-access-shared>
+<ng-container *ngIf="approver" (RAevent)="GetRA($event)">
+    <div  class="top-cnt">
+        <div class="cnt1" >
+         <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" arrow_back_ios" (click)="back()" class="mpointer"></mat-icon>
+            <span  class="headertext">Restricted Access</span>
+         </div>
+     </div>
+    <div  class="steperbox"> 
+    <mat-horizontal-stepper  [animationDuration]="duration"  #stepper>  
+        <mat-step matStepperIcon="done" [completed]="step1Completed" (RAevent)="GetRA($event)">
+        <ng-template matStepLabel  >
+            <span class="stepheaders" [ngStyle]="{'color': step1style}">Plant Code/Group </span></ng-template>
+          <div>
+            <app-restricted-access></app-restricted-access>
+          </div>
+        </mat-step>
+        <mat-step  [completed]="step2Completed" #step2>
+        <ng-template matStepLabel><span class="stepheaders" [ngStyle]="{'color': step2style}">Approver </span></ng-template>
+          <div>
+            <app-restrict-approver *ngIf="afselgates"></app-restrict-approver>
+          </div>
+        </mat-step>
+        <mat-step [completed]="step3Completed" #step3>
+            <ng-template matStepLabel ><span class="stepheaders" [ngStyle]="{'color': step3style}" >Submission</span></ng-template>
+            <div>
+                <app-fsubmission *ngIf="Finaldata"></app-fsubmission>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+    </div>
+    <div class="footerbox">
+        <button mat-raised-button class="vechilefont" id="cnclbtn" (click)="previous(stepper)"  >Cancel</button>
+        <button mat-raised-button class="vechilefont" id="contbtn" (click)="next(stepper)" >{{btntext}}</button>
+    </div>
+</ng-container>

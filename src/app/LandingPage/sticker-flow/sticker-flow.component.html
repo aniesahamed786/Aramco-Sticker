@@ -1,0 +1,22 @@
+<div style="height:100vh; width:100%; background: #EEF3F8; display: flex; justify-content: center; align-items: center; ">
+    <div style="height:90%; width:80%;">
+        <br>
+<div style="display: flex; justify-content: flex-start; align-items: flex-end; flex-direction: row;">
+    <h3 style="margin:0px; color:#00ADE5">Sticker Flow</h3>
+</div>
+<hr style="background-color: #00ADE5; color: #00ADE5; line-height: 2px; border:1px solid #00ADE5; width:80vw">
+<div style="display: flex; justify-content: flex-start; align-items: center;  flex-direction: row; gap:15px; flex-wrap: wrap;">
+    <mat-card class="example-card" *ngFor="let user of users; let i = index;" (click)="navigate(user)">
+        <mat-card-header>
+        </mat-card-header>
+        <img src="../../../assets/sticker.png" style="height:35px; width:30px;">
+       
+        <mat-card-content style="text-align: center; line-height: 0px;;">
+          <h2 style="cursor: pointer;">
+             {{user.name}}
+          </h2>
+        </mat-card-content> 
+      </mat-card>
+</div>
+</div>
+</div>

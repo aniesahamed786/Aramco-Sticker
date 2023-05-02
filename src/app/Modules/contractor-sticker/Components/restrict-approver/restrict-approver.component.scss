@@ -1,0 +1,221 @@
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+   
+}
+::ng-deep .mat-mdc-form-field-infix {
+    min-height: 2vh;
+    
+}
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 0.5vh;
+    padding-bottom: 0.5vh;
+}
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+   display:none !important;
+}
+
+::ng-deep .mdc-text-field--outlined .mdc-notched-outline {
+    z-index: 0;
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+  }
+
+ ::ng-deep .mdc-data-table__cell, .mdc-data-table__header-cell {
+    padding: 0 1px 0 5px !important;
+}
+input::placeholder {
+    font-size: 1vw;
+  }  
+.top-cnt{
+    width:100%;
+    height:5vh;
+    border:2px solid none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+  }
+
+  .cnt1{
+     height: auto;
+     width: auto;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+  }
+  .mbox9 {
+    height:auto;
+    width:auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.mbox10 {
+    height:auto;
+    width:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+// table {
+//     width: auto;
+//     border-top: 0.1vw solid #00ADE5;
+//     // border-top: 0.5px solid #00ADE5;
+   
+//   }
+  
+th {
+    background: #EEF3F8;
+    color: grey;
+    // border-top: 0.5px solid #00A3E0;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 0.8vw;
+    // font: normal normal 600 1vw/1.1vw Segoe UI !important;
+    letter-spacing: 0px;
+    opacity: 1;
+  
+    // position: sticky;
+}
+th button p{
+    background: #EEF3F8;
+    color: grey;
+    // border-top: 0.5px solid #00A3E0;
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 0.8vw;
+    // font: normal normal 600 1vw/1.1vw Segoe UI !important;
+letter-spacing: 0px;
+opacity: 1;
+}
+
+td {
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 0.8vw;
+    // font: normal normal normal 1vw/1.1vw Segoe UI !important;
+    letter-spacing: 0px;
+    color: #666666;
+    opacity: 1;
+}
+// ::ng-deep table:nth-child(1) thead{
+//     height:7vh;
+// }
+// ::ng-deep .mat-mdc-table .fs-table{
+//     thead{
+//         height:100px;
+//     }
+// }
+// .fs-table{
+//     thead{
+//         height:7vh;
+//     }
+// }
+
+table:nth-child(1){
+     width: auto;
+    border-top: 2px solid #00ADE5;
+    border-right: 0.1vw solid #c6c6c6;
+    border-bottom: 0.1vw solid #c6c6c6 ;
+}
+table:nth-child(2){
+    width: auto;
+   border-top: 0.2vw solid #eef3f8;
+//    border-left: 1px solid none;
+   border-bottom: 0.1vw solid #c6c6c6;
+}
+
+// ::ng-deep table:nth-child(1) thead{
+//    height:78px;
+
+// }
+
+// ::ng-deep table:nth-child(2) thead{
+//     height:auto;
+ 
+//  }
+ input{
+    font-size: 0.8vw;
+    padding-left: 0px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    // color: rgb(140, 140, 140);
+ }
+//  ::ng-deep .datepickerOne .mat-calendar-body-today:not(.mat-calendar-body-selected){
+//     border-color: darkgreen;
+//   }
+
+
+::ng-deep .mat-mdc-icon-button.mat-mdc-button-base {
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+}
+.example-second-header-row{
+    height:78px;
+   background-color: #eef3f8;
+   
+}
+
+.rstaprtable{
+   background-color: #eef3f8;
+}
+.rstaprhead{
+    font-size: 1vw;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: auto;
+    flex-direction: row;
+    padding: 1.09vw 2.9vw 0px 0.9vw;
+    color: #00ade5;
+}
+.rstaprflexbox{
+    display: flex;
+    // grid-template-columns: auto auto;
+    padding-left: 1vw;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    // flex-wrap: wrap;
+}
+.lefttable{
+    height: auto;
+     width: 55vw;
+}
+.righttable{
+    height: auto;
+     width: 45vw;
+}
+.rstaprapprovertable{
+        padding: 5px;
+        height: 1.5vh;
+        width: auto;
+        background-color: #eef3f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #666666;
+        font-size: 0.8vw;
+        font-weight: 500;
+        // font: normal normal 700 1vw/1.1vw Segoe UI !important;
+        letter-spacing: 0px;
+        opacity: 1;
+        border-top: 2px solid #00ade5;
+      
+}
+.ramffwdh{
+    width: 8rem !important;
+    padding:5px !important
+}
+.tdcolor{
+    color: #00ade5;
+}

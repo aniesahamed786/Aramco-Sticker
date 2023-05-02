@@ -1,0 +1,464 @@
+<div *ngIf="StickerActionHeader" class="top-cnt">
+    <div  class="cnt1">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" arrow_back_ios" (click)="backaction()"
+             class="mpointer"></mat-icon>
+        <span   class="headertext">{{Title}}</span>
+    </div>
+
+</div>
+
+<div *ngIf="stickerdetails" class="sticker-details">
+    <div class="top-cnt">
+        <div class="cnt1">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" arrow_back_ios" (click)="back()"
+                class="mpointer"></mat-icon>
+                <!-- <svg (click)="back()" class="mpointer" height="3.6vh"  width="1.7vw" xmlns="http://www.w3.org/2000/svg"  viewBox="0 96 960 960" ><path d="M561 816 320 575l241-241 43 43-198 198 198 198-43 43Z"/></svg>  -->
+              <span  class="headertext">Sticker Details</span>
+            
+        </div>
+        <div class="cnt2">
+            <button mat-raised-button id="newreq"
+                (click)="NewSticker()">
+                <div style="display:flex; justify-content: center; align-items: center; flex-direction: row;">
+                <svg  fill="#00ADE5" xmlns="http://www.w3.org/2000/svg" height="3vh"  width="1.67vw" viewBox="0 96 960 960" ><path d="M450 856V606H200v-60h250V296h60v250h250v60H510v250h-60Z"/></svg> 
+                <span>New Sticker</span>
+            </div>
+            </button>
+        </div>
+    </div>
+    <div class="personal-details">
+        <div class="headerborder">
+            <h3  id="perdet" class="header-text">Personal Details</h3>
+        </div>
+        <!-- empname: string;
+  badgenum: string;
+  nos: string; -->
+        <div class="pd-data vechiclefont">
+            <div  class="pernerhead">
+                <span >Badge Number</span>
+                <span class="pernerdata">{{badgenum}}
+                </span>
+            </div>
+            <div class="pernerhead">
+                <span >Employee Name</span>
+                <span  class="pernerdata">{{empname}}</span>
+            </div>
+            <div  class="pernerhead" >
+                <span >No.of Sticker</span>
+                <span  class="pernerdata">{{nos}}
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div>
+        <div class="headerborder">
+            <h3  id="vechilehead" class="header-text">vechicle Details</h3>
+        </div>
+    </div>
+    <div class="vechicle-details">
+        <div class="vdflex">
+            <div class="vdstart" >
+                <span class="vechiclefont">Type</span>
+
+                <span class="vechiclefont">Primary Color</span>
+
+                <span class="vechiclefont">Plate Category</span>
+            </div>
+            <div class="vdstart">
+                <span class="vechiclefont">{{VechicleDetails.Type}}</span>
+
+                <span class="vechiclefont">{{VechicleDetails.Primary}}</span>
+
+                <span class="vechiclefont">{{VechicleDetails.PlateCategory}}</span>
+            </div>
+        </div>
+
+        <div
+            class="vdflex">
+            <div class="vdstart">
+                <span class="vechiclefont">Make</span>
+
+                <span class="vechiclefont"> Secondary Color</span>
+
+                <span class="vechiclefont">License Plate No</span>
+            </div>
+            <div class="vdstart">
+                <span class="vechiclefont">{{VechicleDetails.Make}}</span>
+
+                <span class="vechiclefont">{{VechicleDetails.SecondaryColor}}</span>
+
+                <span class="vechiclefont">{{VechicleDetails.LicenseplateNo}}</span>
+            </div>
+        </div>
+
+        <div class="vdflex">
+            <div class="vdstart">
+                <span class="vechiclefont"> Model</span>
+
+                <span class="vechiclefont">Orgin</span>
+
+                <span class="vechiclefont">&nbsp;</span>
+            </div>
+            <div class="vdstart">
+                <span class="vechiclefont">{{VechicleDetails.Model}}</span>
+
+                <span class="vechiclefont">{{VechicleDetails.Origin}}</span>
+
+                <span class="vechiclefont">&nbsp;</span>
+            </div>
+        </div>
+        <div id="vdflexgap">
+            <div class="vdstart">
+                <span class="vechiclefont">Year</span>
+
+                <span class="vechiclefont">Owner</span>
+
+                <span class="vechiclefont">&nbsp;</span>
+            </div>
+            <div class="vdstart">
+                <span class="vechiclefont">{{VechicleDetails.Year}}</span>
+
+                <span class="vechiclefont">{{VechicleDetails.Owner}}</span>
+
+                <span class="vechiclefont">&nbsp;</span>
+            </div>
+        </div>
+
+    </div>
+    <div  id="gtablew">
+        <div id="flexgates">
+            <div style="display: flex; align-items: flex-end;">
+                <h3 id="gatescolor" class="header-text">Selected Gates
+                </h3>
+            </div>
+            <div >
+                <button mat-raised-button
+                    id="addgates"
+                    (click)="addgates()">
+                    <div style="display:flex; justify-content: center; align-items: center; flex-direction: row;">
+                        <svg  fill="#00ADE5" xmlns="http://www.w3.org/2000/svg" height="3vh"  width="1.67vw" viewBox="0 96 960 960" ><path d="M450 856V606H200v-60h250V296h60v250h250v60H510v250h-60Z"/></svg> 
+                        <span>Add Gates</span>
+                    </div>
+                </button>
+            </div>
+
+        </div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z0">
+            <ng-container matColumnDef="selectedgates">
+                <th mat-header-cell *matHeaderCellDef > Gate code and Name </th>
+                <td mat-cell *matCellDef="let element" style="width:20vw;"> {{element.GateCode}} </td>
+            </ng-container>
+            <!-- Name Column -->
+            <ng-container matColumnDef="area">
+                <th mat-header-cell *matHeaderCellDef > Area </th>
+                <td mat-cell *matCellDef="let element"> {{element.Area}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="selgattable"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div  class="restrictaccessflex">
+        <h3 id="rheader" class="header-text">Current
+            Restricted Access</h3>
+        <div style="padding: 3px;">
+            <button mat-raised-button
+                id="addaccess" (click)="addaccess()">
+                <div style="display:flex; justify-content: center; align-items: center; flex-direction: row;">
+                    <svg  fill="#00ADE5" xmlns="http://www.w3.org/2000/svg" height="3vh"  width="1.67vw" viewBox="0 96 960 960" ><path d="M450 856V606H200v-60h250V296h60v250h250v60H510v250h-60Z"/></svg> 
+                    <span>Add Access</span>
+                </div>
+            </button>
+        </div>
+    </div>
+    <div class="RAtableflex">
+        <div class="flexdircol">
+            <span class="ttext">Plant code</span>
+            <!-- PlantCode: '214-Jizan Bulk Marine Terminal', ValidityType: 'Permanent', ExpiryDate: '31/12/9999'} -->
+            <!-- {plantcode: 'Dharan Terminal', plantgroup: 'F5-L', validitytype: 'Permanent', expirydate: '12/12/2023', name: 'Husain'} -->
+            <table mat-table [dataSource]="plantcodedataSource" class="mat-elevation-z0">
+                <ng-container matColumnDef="plantcode">
+                    <th mat-header-cell *matHeaderCellDef >
+                        <div class="pltcode">
+                            <span >Plant Code</span>
+                            &nbsp; &nbsp;
+                            <mat-form-field [formGroup]="myGroup1" appearance="outline" class="pltsrch">        
+                                <div style="display:flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+                                    <svg  fill="#757575" xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 96 960 960" width="3vw"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+                                    <input (keyup)="plantcodesearch($event)"  formControlName="name" matInput placeholder="Plant Code" class="pltsrip">
+                                </div>
+                            </mat-form-field>
+                        </div>
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{element.plantcode}} </td>
+                </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="validity">
+                    <th mat-header-cell *matHeaderCellDef >
+                        <div class="drdwith">
+                            <button mat-button [matMenuTriggerFor]="menu1">
+                                <!-- <span>
+                                    <p class="vtype" >Validity Type</p>
+                                    <mat-icon class="mitype">keyboard_arrow_down</mat-icon>
+                                </span> -->
+                                <div style="display:flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                                    <span  style="font-size: 0.8vw; color:#666666; ">Validity Type</span>
+                                    <svg style="color:#666666;" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M480 712 240 472l43-43 197 197 197-197 43 43-240 240Z"/></svg>
+                                </div>
+                            </button>
+                        </div>
+                        <mat-menu #menu1="matMenu" style="font-size: 0.8vw; ">
+                            <button mat-menu-item style="font-size: 0.8vw; ">Permanent</button>
+                            <button mat-menu-item style="font-size: 0.8vw; ">Temporary</button>
+                        </mat-menu>
+
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{element.validitytype}} </td>
+                </ng-container>
+                <ng-container matColumnDef="expirydate">
+                    <th mat-header-cell *matHeaderCellDef >
+                        <div class="drdwith">
+                            <button mat-button [matMenuTriggerFor]="menu1"><span>
+                                    <!-- <p class="exprydat">Expiry Date</p>
+                                    <mat-icon class="mitype">keyboard_arrow_down</mat-icon> -->
+                                    <div style="display:flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                                        <span  style="font-size: 0.8vw;color:#666666; ">Expiry Date</span>
+                                        <svg style="color:#666666;" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M480 712 240 472l43-43 197 197 197-197 43 43-240 240Z"/></svg>
+                                    </div>
+                                </span>
+                            </button>
+                        </div>
+                        <mat-menu #menu1="matMenu" style="font-size: 0.8vw; ">
+                            <button style="font-size: 0.8vw; " mat-menu-item>Permanent</button>
+                            <button  style="font-size: 0.8vw; " mat-menu-item>Temporary</button>
+                        </mat-menu>
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{element.expirydate}} </td>
+                </ng-container>
+                <ng-container *matNoDataRow>
+                    <div class="no-data-row">
+                      No data available
+                    </div>
+                  </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns2" id="ftablehead"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+            </table>
+          
+        </div>
+        <div class="flexdircol">
+            <span class="ttext">Plant Group</span>
+           
+            <table mat-table [dataSource]="plantgroupdataScource" class="mat-elevation-z0">
+                <ng-container matColumnDef="plantcode">
+                    <th mat-header-cell *matHeaderCellDef >
+                        <div class="pltcode">
+                            <span>Plant Group </span> 
+                            &nbsp; &nbsp;
+                            <mat-form-field [formGroup]="myGroup2" appearance="outline" class="pltsrch">     
+                                   <div style="display:flex; justify-content: flex-start; align-items: center; flex-direction: row;">
+                                    <svg  fill="#757575" xmlns="http://www.w3.org/2000/svg" height="3vh" viewBox="0 96 960 960" width="3vw"><path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z"/></svg>
+                                    <input (keyup)="plantgroupsearch($event)" formControlName="Search2" matInput placeholder="Plant Group"   class="pltsrip">
+                                   </div>
+                            </mat-form-field>
+                        </div>
+
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{element.plantgroup}} </td>
+                </ng-container>
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="validity">
+                    <th mat-header-cell *matHeaderCellDef >
+                        <div class="drdwith">
+                            <button mat-button [matMenuTriggerFor]="menu1">
+                                <!-- <span>
+                                    <p class="vtype">Validity Type</p>
+                                    <mat-icon class="mitype">keyboard_arrow_down</mat-icon>
+                                </span> -->
+                                <div style="display:flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                                    <span  style="font-size: 0.8vw; color:#666666; ">Validity Type</span>
+                                    <svg style="color:#666666;" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M480 712 240 472l43-43 197 197 197-197 43 43-240 240Z"/></svg>
+                                </div>
+                            </button>
+                        </div>
+                        <mat-menu #menu1="matMenu" style="font-size: 0.8vw; ">
+                            <button style="font-size: 0.8vw; " mat-menu-item>Permanent</button>
+                            <button style="font-size: 0.8vw; " mat-menu-item>Temporary</button>
+                        </mat-menu>
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{element.validitytype}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="expirydate">
+                    <th mat-header-cell *matHeaderCellDef >
+                        <div class="drdwith">
+                            <button mat-button [matMenuTriggerFor]="menu1"><span>
+
+                                    <!-- <p class="exprydat">Expiry Date</p>
+                                    <mat-icon class="mitype">keyboard_arrow_down</mat-icon> -->
+                                    <div style="display:flex; justify-content: space-between; align-items: center; flex-direction: row;">
+                                        <span  style="font-size: 0.8vw; color:#666666; ">Expiry Date</span>
+                                        <svg style="color:#666666;" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M480 712 240 472l43-43 197 197 197-197 43 43-240 240Z"/></svg>
+                                    </div>
+                                </span>
+                            </button>
+                        </div>
+                        <mat-menu #menu1="matMenu" style="font-size: 0.8vw;">
+                            <button style="font-size: 0.8vw; " mat-menu-item>Permanent</button>
+                            <button style="font-size: 0.8vw; " mat-menu-item>Temporary</button>
+                        </mat-menu>
+                    </th>
+                    <td mat-cell *matCellDef="let element"> {{element.expirydate}} </td>
+                </ng-container>
+                 
+                <ng-container *matNoDataRow>
+                    <div class="no-data-row">
+                      No data available
+                    </div>
+                  </ng-container>
+                  
+                <tr mat-header-row *matHeaderRowDef="displayedColumns2" id="stablehead"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns2;"></tr>
+            </table>
+           
+        </div>
+    </div>
+    <div id="sdflexhead">
+        <h3 id="sdheader" class="header-text">Sticker Details</h3>    
+    </div>
+    <div class="sticker_details">
+        <div id="sdflexgap">
+            <div class="vdstart">
+                <span class="vechiclefont">Sticker Office</span>
+
+                <span class="vechiclefont">Company/Private</span>
+
+
+            </div>
+            <div class="vdstart">
+                <span class="vechiclefont">{{StickerDetails.StickerOffice}}</span>
+
+
+                <mat-form-field class="mffw" appearance="outline">
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value" class=mofs>
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+
+
+            </div>
+        </div>
+
+        <div
+            class="vdflex">
+            <div class="vdstart">
+                <span class="vechiclefont">Expiry</span>
+
+                <span class="vechiclefont">Sticker Type</span>
+
+
+            </div>
+            <div class="vdstart">
+                <span class="vechiclefont">{{StickerDetails.Expiry}}</span>
+
+                <mat-form-field class="mffw" appearance="outline">
+                    <mat-select>
+                        <mat-option *ngFor="let food of foods" [value]="food.value" class=mofs>
+                            {{food.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="sticker_details">
+        <div class="vdflex">
+            <div class="vdstart">
+                <span class="vechiclefont">
+                    <span id="allowedhrs">Allowed Hours</span>(24 Hour Basic)
+                </span>
+                <span class="vechiclefont">Start Time</span>
+                <span class="vechiclefont">End Time</span>
+            </div>
+            <div class="vdstart">
+                <span class="vechiclefont">-</span>
+                <span class="vechiclefont">{{AllowedHours.StartTime}}</span>
+                <span class="vechiclefont">{{AllowedHours.EndTime}}</span>
+            </div>
+        </div>
+        <div
+            class="vdflex">
+            <!-- <div class="vdstart">
+            <p class="vechiclefont">Justification/Remarks</p>
+        
+            <p class="vechiclefont">-</p>
+    
+            
+        </div>
+        <div class="vdstart">
+            <p class="vechiclefont">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, </p> -->
+
+            <!-- <p class="vechiclefont">Primary Color</p> -->
+
+
+            <!-- </div> -->
+            <div claSS="justifyflex">
+                <div id="justifyhdcnt">
+                    <h3 id="justifyhead" class="header-text">Justification/Remarks</h3>
+                </div>
+                <br>
+                <div id="jyinbox">
+                    <p style="padding: 0.5vw;  " class="vechiclefont">Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Non cupiditate incidunt aperiam laudantium veritatis omnis molestias assumenda possimus
+                        modi. </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+
+    <div class="btnactioncnt">
+
+        <button mat-raised-button 
+            class="btnactionstxt" (click)="actions('Renew')" [routerLink]="['/main/ContractorSticker/EmployeeStickerDetails/renew']" routerLinkActive="router-link-active" >Renew</button>
+        &nbsp; &nbsp;
+        <button mat-raised-button 
+            class="btnactionstxt" (click)="actions('Replace')">Replace</button>
+        &nbsp; &nbsp;
+        <button mat-raised-button
+            class="btnactionstxt"  (click)="actions('Cancel')">Cancel
+            Sticker</button>
+        &nbsp; &nbsp;
+        <button mat-raised-button 
+            class="btnactionstxt"  (click)="actions('Change')" >Change
+            of Info</button>
+        &nbsp; &nbsp;
+        <button mat-raised-button 
+            class="btnactionstxt" (click)="lost()">Lost</button>
+        &nbsp; &nbsp;
+        <button mat-raised-button 
+            class="btnactionstxt"  (click)="actions('Additional')">Additional
+            Sticker</button>
+
+    </div>
+</div>
+<!-- <app-gate-access *ngIf="gateaccess" ></app-gate-access> -->
+<app-gate-access-shared *ngIf="gateaccess" [datatable]="dataSource" (submitgateaccess)="aftersubmit($event)">
+</app-gate-access-shared>
+<app-add-restricted-access *ngIf="addrestrictaccess" [datatable2]="dataSource3"  [datatable3]="dataSource4" (submitaddrestrictaccess)="afterrestrictaccess($event)"></app-add-restricted-access>
+<!--    -->
+<app-add-restrict-approver *ngIf="addapprovers" [approvertable1]="dataSource5"    [approvertable2]="dataSource5"  (submitapprovers)="aftersubmitapprover($event)"  ></app-add-restrict-approver>
+<app-sticker-actions *ngIf="stickeractions"></app-sticker-actions>
+
+
+<div *ngIf="stickeractions" id="ccbtns">
+    <button mat-raised-button class="vechilefont"  id="cancelstr" (click)="cancel()" >Cancel</button>
+    <button mat-raised-button class="vechilefont"  id="continuestr" (click)="continue()">Continue</button>
+</div>

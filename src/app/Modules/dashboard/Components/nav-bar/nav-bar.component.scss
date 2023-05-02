@@ -1,0 +1,139 @@
+
+
+  .side-bar-sub-text{
+   font-size: 0.7vw;
+  }
+
+
+
+
+
+
+  .sidebar {
+    height: 100%;
+    width:auto;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    // background-image: url('../../../../../assets/landingbackground.png');
+    background: linear-gradient(190deg, rgb(3 3 3), rgb(255 255 255 / 0%)), url(/assets/landingbackground.png);
+    // background: linear-gradient(0deg, rgba(10, 10, 10, 0.54), rgba(0, 0, 0, 0.69)), url(/assets/landingbackground.png);
+    transition: 0.5s;
+    padding-top: 5px;
+    margin-top: 0px;
+    // background-size: cover;
+    background-size: 30.4vw 100%;
+    background-repeat: no-repeat;
+    align-items: center; 
+    color: rgb(247, 248, 248);
+    // position: fixed;
+    
+    width: 100%;
+    overflow: hidden;
+  }
+
+  
+  .sidebar a {
+    padding: 8px 8px 8px 14px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  .navrow {
+    padding: 8px 8px 8px 14px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    cursor: pointer;
+  }
+  
+  .navrow:hover {
+    background-color: #666;
+    color: #f1f1f1;
+  }
+  
+  main .sidebar {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 100px;
+  }
+  
+  .material-icons,
+  .icon-text {
+    vertical-align: middle;
+    font-size: medium;
+  }
+
+  .icon-text{
+    font-size: small;
+  }
+  
+  .material-icons {
+    padding-bottom: 3px;
+    margin-right: 10px;
+  }
+  
+  #main {
+    padding: 16px;
+    margin-left: 85px;
+    transition: margin-left 0.5s;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidebar {
+      padding-top: 15px;
+    }
+  
+    .sidebar a {
+      font-size: 18px;
+    }
+  }
+  
+  .ab {
+    color: white;
+    text-align: center;
+    padding-right: 0px;
+  }
+  
+  .btn {
+    border: none;
+    outline: none;
+    /* padding: 10px 16px; */
+    background-color: white;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  /* Style the active class, and buttons on mouse-over */
+  .active {
+    background-color: #666;
+    color: white;
+  }
+  
+  
+  #myDIV {
+    background-color: white;
+  }
+
+  .img-fluid
+  {
+    border-radius: 25px;
+  }
+  div p{
+    font-weight:700;
+    margin: 0px !important;
+  }
+  .heading{
+    font-weight: 900;
+    font-size: 1vw;
+  }
+  .label{
+    font-size: 0.9vw;
+    padding-bottom: 0.5vw;
+  }
+

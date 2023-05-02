@@ -1,0 +1,354 @@
+::ng-deep .mat-form-field-underline {
+    display: none;
+
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+    min-height: 5vh;
+
+}
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+table .mat-mdc-header-cell {
+    background-color: #EEF3F8;
+}
+
+.mat-mdc-table {
+    table-layout: fixed;
+}
+
+// .mat-mdc-raised-button:not(:disabled) {
+//     background-color: #44caff;
+// }
+
+// .mat-mdc-raised-button[_ngcontent-lbb-c240]:not(:disabled) {
+//     background-color:none;
+// }
+// ::ng-deep .mat-raised-button{
+//     background-color: red;
+// }
+
+
+.maincnt {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.subcnt {
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+.headercnt {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    // border:2px solid red;
+    // gap:10vw;
+}
+
+.headercnt2 {
+    // width:100%;
+    height: auto;
+    width: 75vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // flex-wrap: wrap;
+}
+
+.tablecnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subheadercnt1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.subheadercnt2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+
+}
+
+.subheadercnt2 {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    width: auto;
+}
+
+.secondsubhead1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #00ADE5;
+    font-size: 1vw;;
+}
+
+.secondsubhead2 {
+    // border:1px solid grey;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    // align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+.secondsubhead3 {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // flex-wrap: wrap;
+    gap: 1vw;
+}
+
+table {
+    width: auto;
+   
+    // border-top: 0.5px solid #00ADE5;
+
+}
+
+th {
+    background: #EEF3F8;
+    color: grey;
+    // border-top: 0.5px solid #00A3E0;
+    text-align: center !important;
+    vertical-align: middle !important;
+    // font: normal normal 600 1vw/1.1vw Segoe UI !important;
+    font-size: 0.8vw;
+    letter-spacing: 0px;
+    opacity: 1;
+    // position: sticky;
+}
+
+
+td {
+    text-align: center !important;
+    vertical-align: middle !important;
+    font-size: 0.8vw;
+    // font: normal normal normal 1vw/1.1vw Segoe UI !important;
+    letter-spacing: 0px;
+    color: #666666;
+    opacity: 1;
+}
+
+.tablecnt {
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mbox9 {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content:  baseline;
+    transform: translateX(25px);
+
+
+
+}
+
+.tableheadercolor {
+    background-color: #EEF3F8;
+}
+
+
+
+tr.example-detail-row {
+    height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+    background: none;
+}
+
+//   tr.example-element-row:not(.example-expanded-row):active {
+//     background: #efefef;
+//   }
+
+.example-element-row td {
+    border-bottom-width: 0;
+}
+
+.example-element-detail {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:auto;
+    width:100%;
+}
+
+.selectionbtn {
+    letter-spacing: 0px;
+    background-color: #00ADE5 !important;
+    color: white !important;
+    border-radius: 25px;
+    padding:1vw;
+    font-size: 0.9vw;
+    width:auto;
+    height:5vh;
+    // padding:0.5vw;
+    // font-size: 0.9vw;
+}
+
+.selectionbtn:disabled {
+    background-color: #e2e2e2 !important;
+    letter-spacing: 0px;
+    color: white !important;
+    border-radius: 25px;
+    padding:1vw;
+    font-size: 0.9vw;
+    width:auto;
+    height:5vh;
+}
+
+::ng-deep .mat-sort-header-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.sub-table-header{
+    background-color:#deeeff;
+}
+// ::ng-deep table:nth-child(1) th{
+//     height:auto;
+// }
+.flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    // background-color: gray;
+}
+
+
+.headertext{
+    font-size:1.2vw;font-weight: 500;font-style: italic;cursor: pointer;
+}
+
+.mpointer{
+    cursor: pointer;
+}
+
+#newreqbtn{
+    border: 1px solid #00ADE5;
+     color: #00ADE5;
+      background-color: none;
+      letter-spacing: 0px;
+    //   padding-right: 1vw;
+    // padding:1vw;
+    // font-size: 1vw;
+    width:auto;
+    height:5vh;
+    padding:0.5vw;
+    font-size: 0.9vw;
+}
+// #searchbar{
+//     display: flex;
+//     justify-content: space-evenly;
+//     align-items: center;
+//     flex-direction: row;
+//     padding:0px; width:20vw; border-radius: 25px;
+
+// }
+
+#searchbar{
+    padding:0px; width:20vw; height:5vh; border-radius: 25px;
+}
+#searchicon{
+    color:#00ADE5; padding:4px;
+}
+.menuicon{
+    height:18px; display: inline-block;
+}
+.menutxt{
+    margin:0px; padding: 5px; display: inline-block;
+}
+#parrenttable{
+    border-top: 2px solid #00ADE5;
+}
+#childtable{
+     border-left: 5px solid #a4d1ff; background-color: #f8fafc;
+
+}
+
+
+// @media (height: 200px) {
+//     .scrollabletable {
+//       overflow:auto;
+//       height:200px;
+//     }
+
+// }
+#profileimg{
+    height:35px; width:35px; border-radius: 50%;  margin:0px; padding:0px; border:0.1rem solid rgb(218, 218, 218);
+}
+#empname{
+    padding-right:50px; padding-left:0px;
+}
+.tableflex{
+    display:flex; justify-content:center;  align-items:center;
+}
+.tdcolor,#view{
+    color:#00ADE5
+}
+
+#searchsvg{
+    display: inline-block;
+}
+
+.sortbtn{
+    // padding:0.8vw;
+    font-size: 0.9vw;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding:0.1vw
+}
+.sorttext{
+    padding-right: 0.5vw;
+}
+

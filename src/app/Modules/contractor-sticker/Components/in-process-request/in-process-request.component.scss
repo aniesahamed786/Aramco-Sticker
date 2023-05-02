@@ -1,0 +1,253 @@
+// .mdc-data-table__header-cel{
+//     background-color: #00ADE5;
+// }
+// th{
+//     background-color: #00ADE5;
+// }
+::ng-deep .mat-form-field-underline {
+    display: none;
+
+}
+
+::ng-deep .mat-mdc-form-field-infix {
+    min-height: 5vh;
+
+}
+
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.mat-mdc-table {
+    table-layout: fixed;
+}
+
+// ::ng-deep .mdc-data-table__cell {
+//     padding: 0 60px 0 16px;
+// }
+
+.maincnt {
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.subcnt {
+    display: flex;
+    height: auto;
+    width: auto;
+}
+
+.headercnt {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10vw;
+}
+
+.headercnt2 {
+    // width:100%;
+    height: auto;
+    width: 75vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tablecnt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subheadercnt1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+    width: auto;
+}
+
+.subheadercnt2 {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+
+}
+
+.subheadercnt2 {
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    width: auto;
+}
+
+.secondsubhead1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #00ADE5;
+    font-size: 1vw;
+}
+
+.secondsubhead2 {
+    // border:1px solid grey;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+}
+
+.secondsubhead3 {
+    height: auto;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1vw;
+}
+
+table {
+    width: auto;
+    
+
+}
+
+th {
+    background: #EEF3F8;
+    color: grey;
+    border-top: 2px solid #00A3E0;
+    text-align: left !important;
+    vertical-align: middle !important;
+    font-size:0.8vw;
+    // font: normal normal 600 1vw/1.1vw Segoe UI !important;
+    letter-spacing: 0px;
+    opacity: 1;
+    // position: sticky;
+}
+
+
+td {
+    text-align: left !important;
+    vertical-align: middle !important;
+    // font: normal normal normal 1vw/1.1vw Segoe UI !important;
+    font-size:0.8vw;
+    letter-spacing: 0px;
+    color: #666666;
+    opacity: 1;
+}
+
+.tablecnt {
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mbox9 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    margin-right: 0px;
+
+
+}
+.mbox10 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:165px;
+    margin-right: 0px;
+
+
+}
+
+
+
+.tableheadercolor {
+    background-color: #EEF3F8;
+}
+
+.headertext{
+    font-size:1vw;
+    font-weight: 500;
+    font-style: italic;
+    cursor: pointer;
+}
+
+.mpointer{
+    cursor: pointer;
+}
+.mffipr{
+    padding:0px; width:30vw; height:5vh; border-radius: 25px;
+}
+#miipr{
+    color:#00ADE5; padding:4px;
+}
+.mipact{
+    height:18px;
+}
+
+#rscsipr{
+    border-radius: 3rem; background-color:#00ADE5; color: #ffffff;
+}
+.inprocesstableheader{
+    background-color: #EEF3F8;
+}
+#tdcolor{
+    color:#00ADE5;
+}
+#fltrlist{
+    margin:0px; padding: 5px; display: inline-block;
+}
+
+.sortbtn{
+    // padding:0.8vw;
+    font-size: 0.9vw;
+    letter-spacing: 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    padding:0.1vw
+}
+.sorttext{
+    padding-right: 0.5vw;
+}
+.selectionbtn{
+    letter-spacing: 0px;
+    background-color: #00ADE5 !important;
+    color: white !important;
+    border-radius: 25px;
+    padding:1vw;
+    font-size: 0.9vw;
+    width:auto;
+    height:5vh;
+}
+
